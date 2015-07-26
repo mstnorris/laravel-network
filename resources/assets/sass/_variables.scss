@@ -15,12 +15,17 @@ $navbar-default-link-active-bg: material-color('blue-grey', '600');
 $panel-primary-text: material-color('blue-grey', '50');
 $panel-primary-heading-bg: material-color('blue-grey');
 $panel-primary-border: material-color('blue-grey');
-$panel-bg: material-color('blue-grey', '50');
+//$panel-bg: material-color('blue-grey', '50');
+
+$panel-default-border: material-color('blue-grey', '100');
 
 $btn-primary-color: material-color('orange', '50');
 $btn-primary-bg: material-color('deep-orange');
 $btn-primary-border: material-color('deep-orange', '400');
 $btn-primary-color: material-color('orange', '50');
+$btn-default-bg: material-color('blue-grey');
+$btn-default-border: material-color('blue-grey', '400');
+$btn-default-color: material-color('blue-grey', '50');
 $link-color: $text-color;
 
 $pagination-active-bg: material-color('blue-grey');

@@ -9,7 +9,7 @@
 | you a convenient way to create models for testing and seeding your
 | database. Just tell the factory how a default model should look.
 |
-*/
+ */
 
 $factory->define(App\User::class, function (Faker\Generator $faker) {
     return [
@@ -23,17 +23,18 @@ $factory->define(App\User::class, function (Faker\Generator $faker) {
 $factory->define(App\Profile::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 1,
+        'username' => $faker->word,
         'facebook_username' => $faker->word,
         'twitter_username' => $faker->word,
-        'instagram_username' => $faker->word
+        'instagram_username' => $faker->word,
     ];
 });
 
-$factory->define(App\Article::class, function (Faker\Generator $faker) {
+$factory->define(App\Status::class, function (Faker\Generator $faker) {
     return [
-        'user_id' => $faker->numberBetween(1,50),
+        'user_id' => $faker->numberBetween(1, 50),
         'title' => $faker->realText(70),
         'body' => $faker->realText(1000, 3),
-        'published_at' => $faker->dateTimeBetween('-1 year', '+1 month')->format('Y-m-d H:i:s')
+        'published_at' => $faker->dateTimeBetween('-1 year', '+1 month')->format('Y-m-d H:i:s'),
     ];
 });

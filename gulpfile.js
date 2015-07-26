@@ -31,8 +31,6 @@ elixir(function(mix) {
         "app.js"
     ]);
 
-    elixir(function(mix) {
-        mix.version(["css/all.css", "js/all.js"]);
-    });
+    mix.version(["public/css/all.css", "public/js/all.js"]);
 
 });

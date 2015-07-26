@@ -12,7 +12,7 @@
                 <h1 class="text-center">All Articles</h1>
 
                 @foreach ( $articles as $article )
-                    @include('articles.partials._individual')
+                    @include('statuses.partials._individual')
                 @endforeach
 
                 <div class="row">

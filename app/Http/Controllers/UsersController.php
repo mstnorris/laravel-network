@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
-use Illuminate\Http\Request;
-
-use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class UsersController extends Controller
 {
@@ -15,12 +12,30 @@ class UsersController extends Controller
         return view('users.dashboard');
     }
 
-    public function getIndividualUserArticles($id)
+    public function getProfile($username)
     {
-        $user = User::findOrFail($id);
+        $user = User::whereHas('profile', function ($q) use ($username) {
+            $q->whereUsername($username);
+        })->first();
 
-        $user->load('articles');
+        return $user ? redirect()->route('individual_user_articles_path', $username) : abort(404);
+    }
+
+    public function getIndividualUserStatuses($username)
+    {
+        $user = User::whereHas('profile', function ($q) use ($username) {
+            $q->whereUsername($username);
+        })->first();
+
+        $user->load('statuses');
 
         return view('users.individual-user', compact('user'));
+    }
+
+    public function getAllUsersWithProfiles()
+    {
+        $users = User::with('profile')->orderBy('name')->paginate(12);
+
+        return view('users.all-users', compact('users'));
     }
 }

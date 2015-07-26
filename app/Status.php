@@ -5,7 +5,7 @@ namespace App;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
-class Article extends Model
+class Status extends Model
 {
     protected $fillable = [
         'title',
@@ -24,7 +24,7 @@ class Article extends Model
 
     public function setPublishedAtAttribute($date)
     {
-        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d H:i:s', $date);
+        $this->attributes['published_at'] = Carbon::createFromFormat('Y-m-d', $date);
     }
 
     public function author()
