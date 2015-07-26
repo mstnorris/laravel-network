@@ -1,9 +1,8 @@
-## Simple Blog
+## Simple Social Network
 
-A simple blog built with Laravel 5.1.
+A simple social network built with Laravel 5.1.
 
-- Add, edit and delete *Users*
-- Assign *Roles* and *Permissions*
-- Email notifications
-- Writing and editing articles
-- Tagging articles
+- Profile Page
+- Follow / Friends
+- Private Messaging
+- Block users

@@ -76,7 +76,7 @@
 
     <div class="container">
         <div class="content">
-            <div class="title animated fadeInDown">Blog</div>
+            <div class="title animated fadeInDown">Social Network</div>
             <a href="/register" class="btn btn-primary btn-responsive">Sign up</a> <span class="spacer">or</span> <a href="/login" class="btn btn-primary btn-responsive">Sign in</a>
         </div>
     </div>
