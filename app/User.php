@@ -113,12 +113,16 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 
     public function statuses()
     {
-        return $this->hasMany(Status::class);
+        return $this->hasMany(Status::class)->latest();
     }
 
     public function profile()
     {
         return $this->hasOne(Profile::class);
+    }
+
+    public function friends() {
+        return $this->belongsToMany(User::class, 'friends', 'follower_id', 'followed_id');
     }
 
     /**

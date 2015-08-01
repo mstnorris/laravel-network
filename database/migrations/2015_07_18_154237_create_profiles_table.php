@@ -17,6 +17,7 @@ class CreateProfilesTable extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->string('username');
+            $table->string('photo_url');
             $table->string('facebook_username')->nullable();
             $table->string('twitter_username')->nullable();
             $table->string('instagram_username')->nullable();

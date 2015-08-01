@@ -21,11 +21,11 @@
 
                             <li class="{{ set_active('/') }}"><a href="/"><i class="fa fa-fw fa-home"></i> Home</a></li>
                             <li class="{{ set_active('users') }}"><a href="/users"><i class="fa fa-fw fa-users"></i> All Users</a></li>
-
-
-
+                        @endif
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
+
+                        @if ( auth()->check() )
 
                             <li class="{{ set_active('status') }}"><a href="/status"><i class="fa fa-fw fa-pencil-square-o"></i> Update Status</a></li>
                             <li class="{{ set_active('@' . auth()->user()->profile->username) }} dropdown">

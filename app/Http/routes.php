@@ -18,6 +18,7 @@ Route::get('users/add', ['as' => 'add_user_path', 'uses' => 'UMSController@getAd
 Route::get('users/roles', ['as' => 'all_roles_path', 'uses' => 'UMSController@getAllRoles', 'middleware' => ['auth', 'admin']]);
 Route::get('users/permissions', ['as' => 'all_permissions_path', 'uses' => 'UMSController@getAllPermissions', 'middleware' => ['auth', 'admin']]);
 Route::get('@{username}', ['as' => 'individual_user_statuses_path', 'uses' => 'UsersController@getIndividualUserStatuses', 'middleware' => ['auth']]);
+Route::post('@{username}/add', ['as' => 'add_user_as_friend_path', 'uses' => 'UsersController@postAddUserAsFriend', 'middleware' => ['auth']]);
 
 // Authentication routes...
 Route::get('login', 'Auth\AuthController@getLogin');

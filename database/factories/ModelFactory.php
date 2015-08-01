@@ -24,6 +24,7 @@ $factory->define(App\Profile::class, function (Faker\Generator $faker) {
     return [
         'user_id' => 1,
         'username' => $faker->word,
+        'photo_url' => 'http://laravel-network.dev/images/' . $faker->numberBetween(6, 774) . '.jpeg',
         'facebook_username' => $faker->word,
         'twitter_username' => $faker->word,
         'instagram_username' => $faker->word,
@@ -35,6 +36,6 @@ $factory->define(App\Status::class, function (Faker\Generator $faker) {
         'user_id' => $faker->numberBetween(1, 50),
         'title' => $faker->realText(70),
         'body' => $faker->realText(1000, 3),
-        'published_at' => $faker->dateTimeBetween('-1 year', '+1 month')->format('Y-m-d H:i:s'),
+        'published_at' => $faker->dateTimeBetween('-1 year', '+1 month')->format('Y-m-d')
     ];
 });

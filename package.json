@@ -11,6 +11,7 @@
     "bootstrap-sass": "^3.3.5",
     "font-awesome": "^4.3.0",
     "jquery": "^2.1.4",
+    "jquery-ui": "^1.10.5",
     "laravel-elixir": "^3.0.0",
     "marked": "^0.3.3",
     "select2": "^4.0.0",

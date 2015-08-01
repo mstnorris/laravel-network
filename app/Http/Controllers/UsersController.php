@@ -32,6 +32,18 @@ class UsersController extends Controller
         return view('users.individual-user', compact('user'));
     }
 
+    public function postAddUserAsFriend($username)
+    {
+        $user = User::whereHas('profile', function ($q) use ($username) {
+            $q->whereUsername($username);
+        })->first();
+
+        $user->friends()->attach(auth()->user());
+
+        redirect()->to('/');
+
+    }
+
     public function getAllUsersWithProfiles()
     {
         $users = User::with('profile')->orderBy('name')->paginate(12);

@@ -1,13 +1,35 @@
 @extends('layouts.master')
 
 @section('content')
+    <style>
+        .cover-photo {
+            display: inline-block;
+        }
+
+        .cover-photo h3 {
+            position: relative;
+            top: -2em;
+            line-height: 2em;
+            margin: 0 auto;
+            background: rgba(0,0,0,0.5);
+            color: rgba(255,255,255,0.8);
+            text-align: center;
+        }
+    </style>
+
+
     <div class="container-fluid">
+
         <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
 
-                <h1><i class="fa fa-fw fa-user"></i> {{ $user->name }}
+            <div class="col-md-2 col-md-offset-3 col-sm-2 col-sm-offset-2">
 
-                    @unless ( auth()->user()->id == $user->id )
+                    <div class="cover-photo">
+                        <img src="{{ $user->profile->photo_url }}" alt="" width="320">
+                        <h3>{{ $user->name }}</h3>
+                    </div>
+
+                @unless ( auth()->user()->id == $user->id )
                     <div class="pull-right">
 
                         <div class="btn-group" role="group" aria-label="...">
@@ -27,15 +49,18 @@
                             </div>
                         </div>
                     </div>
-                    @endunless
-
-                </h1>
-
+                @endunless
 
             </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="col-md-4 col-sm-6">
+
+
+
+
+            {{--</div>--}}
+        {{--</div>--}}
+        {{--<div class="row">--}}
+            {{--<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">--}}
                 @if ( $user->statuses()->count() )
 
                 @foreach ( $user->statuses as $status )

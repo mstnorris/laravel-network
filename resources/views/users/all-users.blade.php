@@ -42,16 +42,16 @@
                             <div class="col-sm-4">
                                 <div class="profile-card">
                                     <div class="profile-card-header">
-                                        <img src="http://i.imgur.com/fEYwd6Y.jpg" alt="" class="profile-photo">
+                                        <img src="{{ $user->profile->photo_url }}" alt="" class="profile-photo">
                                     </div>
                                     <div class="profile-card-body">
 
-                                        <h4>{{ $user->name }}</h4>
+                                        <h4>{{ $user->name }} <span class="pull-right">{{ $user->friends()->count() }}</span></h4>
                                         <a href="https://facebook.com/{{ $user->profile->facebook_username }}"><i class="fa fa-fw fa-facebook"></i></a>
                                         <a href="https://twitter.com/&#64;{{ $user->profile->twitter_username }}"><i class="fa fa-fw fa-twitter"></i></a>
                                         @if ( auth()->check() && auth()->user()->id != $user->id )
                                             <span class="pull-right">
-                                                <a href="#"><i class="fa fa-fw fa-user-plus"></i></a>
+                                                <form action="/&#64;{{ $user->profile->username }}/add" method="POST">{!! csrf_field() !!}<button class="btn-link" type="submit"><i class="fa fa-fw fa-user-plus"></i></button></form>
                                             </span>
                                         @endif
                                     </div>

@@ -34,6 +34,7 @@ class ConstantsTableSeeder extends Seeder
         $michaelProfile = Profile::create([
             'user_id' => $michael->id,
             'username' => 'mstnorris',
+            'photo_url' => 'http://laravel-network.dev/images/1.jpeg',
             'facebook_username' => 'mstnorris',
             'twitter_username' => 'mstnorris',
             'instagram_username' => 'mstnorris',
@@ -53,6 +54,7 @@ class ConstantsTableSeeder extends Seeder
         $sezerProfile = Profile::create([
             'user_id' => $sezer->id,
             'username' => 'sezertunca',
+            'photo_url' => 'http://laravel-network.dev/images/2.jpeg',
             'facebook_username' => 'sezertunca',
             'twitter_username' => 'sezertunca',
             'instagram_username' => 'sezertunca',
@@ -72,6 +74,7 @@ class ConstantsTableSeeder extends Seeder
         $hollyProfile = Profile::create([
             'user_id' => $holly->id,
             'username' => 'hjm',
+            'photo_url' => 'http://laravel-network.dev/images/3.jpeg',
             'facebook_username' => 'hjm',
             'twitter_username' => 'hjm',
             'instagram_username' => 'hjm',
@@ -91,6 +94,7 @@ class ConstantsTableSeeder extends Seeder
         $superUProfile = Profile::create([
             'user_id' => $superU->id,
             'username' => 'superadmin',
+            'photo_url' => 'http://laravel-network.dev/images/4.jpeg',
             'facebook_username' => 'superadmin',
             'twitter_username' => 'superadmin',
             'instagram_username' => 'superadmin',
@@ -110,6 +114,7 @@ class ConstantsTableSeeder extends Seeder
         $adminUProfile = Profile::create([
             'user_id' => $adminU->id,
             'username' => 'admin',
+            'photo_url' => 'http://laravel-network.dev/images/5.jpeg',
             'facebook_username' => 'admin',
             'twitter_username' => 'admin',
             'instagram_username' => 'admin',
@@ -262,7 +267,7 @@ class ConstantsTableSeeder extends Seeder
                 $u->profile()->save(factory(Profile::class)->create());
             });
 
-        factory(Status::class, 50)->create();
+        factory(Status::class, 300)->create();
 
     }
 }
